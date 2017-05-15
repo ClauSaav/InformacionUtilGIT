@@ -1,0 +1,71 @@
+############################################## LOGSTASH #################################################
+https://hub.docker.com/_/logstash/
+
+############################################### KAFKA ###################################################
+*con éste instale kafa
+http://howtoprogram.xyz/2016/07/21/using-apache-kafka-docker/
+
+*info
+http://blog.mmlac.com/how-to-pre-process-logs-with-logstash/
+https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html#array
+http://howtoprogram.xyz/2016/07/21/using-apache-kafka-docker/
+
+############################################### HDFS + ACL ###############################################
+*[COMANDOS] http://www.dummies.com/programming/big-data/hadoop/hadoop-for-dummies-cheat-sheet/
+
+*http://blog.mmlac.com/how-to-pre-process-logs-with-logstash/
+https://tree.taiga.io/project/slimmer-enstar/wiki/hadoop-acls
+
+### HDFS + ACL
+http://www.w3ii.com/es/hadoop/hadoop_quick_guide.html
+
+# Habilitar
+vi $HADOOP_PREFIX/etc/hadoop/hdfs-site.xml 
+
+<property>
+<name>dfs.namenode.acls.enabled</name>
+<value>true</value>
+</property>
+
+# Reiniciar Servicio Namenode
+/usr/local/hadoop/sbin/stop-all.sh
+/usr/local/hadoop/sbin/start-all.sh
+
+
+
+
+
+
+
+input { file {
+
+    path => ["/var/log/messages", "/var/log/httpd/error_log", "/var/log/httpd/error_log"]
+
+    type => "syslog"
+
+  } 
+
+}
+
+output {
+
+  kafka {
+
+        bootstrap_servers => "172.17.0.3:9092"
+
+        topic_id => ["test"]
+
+  }
+
+  
+
+}
+
+
+
+
+**************NOTAS DOCKER********
+
+Como lista de en HDFS
+hdfs dfs -ls *
+ls /

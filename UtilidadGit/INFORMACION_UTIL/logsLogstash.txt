@@ -1,0 +1,53 @@
+*FUENTESS DE MESOS PARA EL PROCESO
+http://jamesporter.me/2014/11/15/hello-mesos.html
+
+*As a hack you can kill a marathon task at the end, as suggested here: 
+https://github.com/mesosphere/marathon/issues/344#issuecomment-86697361
+
+
+
+
+
+
+
+curl 'localhost:9200/indice/tipo/1'
+
+Logstash
+ver su ruta:
+whereis logstash
+ejemplo:
+sudo bin/logstash -e 'input { stdin { } } output { stdout {} }' --path.settings /etc/logstash
+darle privilegios a /var/log/messages:
+sudo chmod 775 /var/log/messages
+
+Ejecutar logstash con criterios:
+sudo bin/logstash -f tarea-pipeline.conf 
+
+Script:
+input{
+   file{
+      path => "/var/log/syslog"
+      start_position => beginning
+   }
+}
+
+output {
+    elasticsearch {
+        hosts => [ "localhost:9200" ]
+        index => "leonlogs"
+#       document_type => "logs"
+    }
+}
+
+Indices:
+curl 'localhost:9200/_cat/indices?v' 
+Busqueda:
+curl 'localhost:9200/logstash-2017.04.15/_search?pretty'
+
+
+
+
+
+####################################################################################################
+Ver los twiits insertados de elastic
+http://localhost:9200/leon/mensaje/_search?pretty

@@ -1,0 +1,9 @@
+{
+  "id": "proso",
+  "cmd": "while [ true ] ; do echo 'Hello Marathon' ; sleep 5 ; done",
+  "mem": 16,
+  "cpus": 2,
+  "instances": 3,
+  "disk": 0.0,
+  "ports": [0]
+}

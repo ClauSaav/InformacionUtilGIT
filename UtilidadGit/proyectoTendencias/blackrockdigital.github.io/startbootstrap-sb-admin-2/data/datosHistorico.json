@@ -1,0 +1,23 @@
+{
+    "friends": [{
+            "text_info": "Primero Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu",
+            "src": "http://farm6.staticflickr.com/5693/21576483260_5e25bef074_m.jpg"
+        },
+        {
+            "text_info": "Segundo adipisicing pecu, sed do eiusmod tempor incididunt ut ",
+            "src": "http://farm6.staticflickr.com/5814/21738363616_c345a74fb9_m.jpg"
+        },
+        {
+            "text_info": "Tercero  lamet, consectetaur cillium adipisicing pecu, sed  ",
+            "src": "http://farm1.staticflickr.com/719/21748540992_2c31d1b8f8_m.jpg"
+        },
+        {
+            "text_info": "Cuarto lamet, consectetaur cillium adipisicing pecu, sed",
+            "src": "http://farm6.staticflickr.com/5693/21576483260_5e25bef074_m.jpg"
+        },
+        {
+            "text_info": "Quinto Lot lamet, consectetaur cillium",
+            "src": "http://farm1.staticflickr.com/753/21760181905_88fa06885a_m.jpg"
+        }
+    ]
+}

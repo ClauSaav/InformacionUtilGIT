@@ -1,0 +1,280 @@
+*STUDENTS
+specie: 'dog', raza: 'Husky', age:3}]},
+{name: 'Armin', age: 39, dir: 'Holland 18', colors: ['yellow','blue','gray'], accounts: [30,40,50], pets: [{name: 'Armada', especie: 'dog', raza: 'Beagle', age:4}]},
+{name: 'Ferry', age: 28, dir: 'Minsk 456', colors: ['white','black','blue'], accounts: [11,12,13], pets: [{name: 'Gouryella', especie: 'dog', raza: 'chicane', age: 2}]},
+{name: 'John', age: 40, dir: 'manhathan 46', colors: ['purple','cian','green'], accounts: [14,34,80], pets: [{name: 'Askew', especie: 'cat', raza: 'siames', age: 1}]},
+{name: 'Nicky', age: 26, dir: 'Arkansas 890', colors: ['brown','black','gray'], accounts: [01,56,90], pets: [{name: 'Rome', especie: 'cat', raza: 'brittish', age: 5}]},
+{name: 'Joel', age: 29, dir: 'River 1056', colors: ['black','red','cian'], accounts: [39,123,90], pets: [{name: 'Madden', especie: 'dog', raza: 'pug', age: 8}]},
+{name: 'Jordan', age: 25, dir: 'Chicago 490', colors: ['red','white','black'], accounts: [99,88,77], pets: [{name: 'Suckley', especie: 'dog', raza: 'pit bull', age: 7}]},
+{name: 'Bryan', age: 25, dir: 'Madisson 123', colors: ['blue','pink','cian'], accounts: [11,56,45], pets:
+[{name: 'Kearney', especie: 'cat', raza: 'brittish', age: 1}]},
+{name: 'Sean', age: 38, dir: 'New York 444', colors: ['green','orange','pink'], accounts: [00,100,30], pets: [{name: 'Tyas', especie: 'dog', raza: 'bulldog', age: 10}]},
+{name: 'Paul', age: 44, dir: 'Arkansas 05', colors: ['yellow','purple','red'], accounts: [77,90,33], pets: [{name: 'Dyk', especie: 'dog', raza: 'pug', age: 3}]}])
+
+*en mongo con ttl students
+** crear el ttl 
+db.students.createIndex( {"createdAt": 1 }, {expireAfterSeconds: 604800})
+
+
+db.students.insert([{"createdAt": new Date(),_id:1,name: 'Paul', age: 44, dir: 'Arkansas 05', colors: ['yellow','purple','red'], accounts: [77,90,33], pets: [{name: 'Dyk', especie: 'dog', raza: 'pug', age: 3}]}])
+db.students.insert([{"createdAt": new Date(),_id:2,name: 'Sean', age: 38, dir: 'New York 444', colors: ['green','orange','pink'], accounts: [00,100,30], pets: [{name: 'Tyas', especie: 'dog', raza: 'bulldog', age: 10}]}])
+db.students.insert([{"createdAt": new Date(),_id:3,name: 'Bryan', age: 25, dir: 'Madisson 123', colors: ['blue','pink','cian'], accounts: [11,56,45], pets:[{name: 'Kearney', especie: 'cat', raza: 'brittish', age: 1}]}])
+db.students.insert([{"createdAt": new Date(),_id:4,name: 'Jordan', age: 25, dir: 'Chicago 490', colors: ['red','white','black'], accounts: [99,88,77], pets: [{name: 'Suckley', especie: 'dog', raza: 'pit bull', age: 7}]}])
+db.students.insert([{"createdAt": new Date(),_id:5,name: 'Joel', age: 29, dir: 'River 1056', colors: ['black','red','cian'], accounts: [39,123,90], pets: [{name: 'Madden', especie: 'dog', raza: 'pug', age: 8}]}])
+db.students.insert([{"createdAt": new Date(),_id:6,name: 'Nicky', age: 26, dir: 'Arkansas 890', colors: ['brown','black','gray'], accounts: [01,56,90], pets: [{name: 'Rome', especie: 'cat', raza: 'brittish', age: 5}]}])
+db.students.insert([{"createdAt": new Date(),_id:7,name: 'John', age: 40, dir: 'manhathan 46', colors: ['purple','cian','green'], accounts: [14,34,80], pets: [{name: 'Askew', especie: 'cat', raza: 'siames', age: 1}]}])
+db.students.insert([{"createdAt": new Date(),_id:8,name: 'John', age: 40, dir: 'manhathan 46', colors: ['purple','cian','green'], accounts: [14,34,80], pets: [{name: 'Askew', especie: 'cat', raza: 'siames', age: 1}]}])
+db.students.insert([{"createdAt": new Date(),_id:9,name: 'Ferry', age: 28, dir: 'Minsk 456', colors: ['white','black','blue'], accounts: [11,12,13], pets: [{name: 'Gouryella', especie: 'dog', raza: 'chicane', age: 2}]}])
+db.students.insert([{"createdAt": new Date(),_id:10,name: 'Armin', age: 39, dir: 'Holland 18', colors: ['yellow','blue','gray'], accounts: [30,40,50], pets: [{name: 'Armada', especie: 'dog', raza: 'Beagle', age:4}]}])
+
+
+
+*USERS MONGO
+db.users.createIndex( {"createdAt": 1 }, {expireAfterSeconds: 604800})
+db.users.insert(
+  [
+     {
+     "createdAt": new Date(),
+       _id: 1,
+       name: "armin",
+       age: 29,
+       type: 1,
+       status: "P",
+       favorites: { artist: "Faulkner", food: "Chips" },
+       finished: [ 34, 14 ],
+       badges: [ "red", "green", "purple", "orange", "cian" ],
+       points: [
+          { points: 95, bonus: 11 },
+          { points: 45, bonus: 02 },
+          { points: 13, bonus: 04 },
+          { points: 67, bonus: 05 },
+          { points: 90, bonus: 06 }]}]),
+db.users.insert([{
+		"createdAt": new Date(),
+       _id: 2,
+       name: "Adina",
+       age: 34,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Franklin", food: "mole" },
+       finished: [ 12, 26 ],
+       badges: [ "yellow", "blue", "red", "gray", "cian" ],
+       points: [
+          { points: 99, bonus: 55 },
+          { points: 88, bonus: 44 },
+          { points: 87, bonus: 33 },
+          { points: 77, bonus: 22 },
+          { points: 56, bonus: 11 }]}])
+
+
+ db.users.insert([{
+ 		"createdAt": new Date(),
+       _id: 3,
+       name: "Tomas",
+       age: 72,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Anahera", food: "raise" },
+       finished: [ 6 ],
+       badges: [ "blue", "red", "green", "black", "white"],
+       points: [
+          { points: 89, bonus: 3 },
+          { points: 66, bonus: 4 },
+          { points: 99, bonus: 5 },
+          { points: 12, bonus: 6 },
+          { points: 34, bonus: 20 }]}])
+
+db.users.insert([{
+		"createdAt": new Date(),
+       _id: 4,
+       name: "markus",
+       age: 34,
+       type: 1,
+       status: "D",
+       favorites: { artist: "Solarstone", food: "chocolate" },
+       finished: [ 3, 18 ],
+       badges: [ "green", "cian", "yellow", "blue", "red" ],
+       points: [
+          { points: 93, bonus: 18 },
+          { points: 83, bonus: 19 },
+          { points: 73, bonus: 11 },
+          { points: 63, bonus: 12 },
+          { points: 51, bonus: 22 }]}])
+     
+     db.users.insert([{
+     	"createdAt": new Date(),
+       _id: 5,
+       name: "Ben",
+       age: 28,
+       type: 1,
+       status: "C",
+       favorites: { artist: "MaRLo", food: "spaggetti" },
+       finished: [ 12, 3 ],
+       badges: [ "orange", "yellow", "white", "gray", "purple" ],
+       points: [
+          { points: 21, bonus: 12 },
+          { points: 88, bonus: 11 },
+          { points: 35, bonus: 03 },
+          { points: 44, bonus: 13 },
+          { points: 22, bonus: 10 }]}])
+   
+   db.users.insert([{
+   		"createdAt": new Date(),
+       _id: 6,
+       name: "ferry",
+       age: 44,
+       type: 2,
+       status: "A",
+       favorites: { artist: "Gouryella", food: "soup" },
+       finished: [ 20, 20 ],
+       badges: [ "red", "blue", "green", "yellow", "orange"],
+       points: [
+          { points: 18, bonus: 10 },
+          { points: 81, bonus: 18 },
+          { points: 08, bonus: 15 },
+          { points: 34, bonus: 12 },
+          { points: 99, bonus: 11 }]}])
+    
+    db.users.insert([{
+    	"createdAt": new Date(),
+       _id: 7,
+       name: "sue",
+       age: 19,
+       type: 1,
+       status: "P",
+       favorites: { artist: "Leonardo", food: "Donuts" },
+       finished: [ 16, 1 ],
+       badges: [ "black", "white", "green", "blue", "red" ],
+       points: [
+          { points: 45, bonus: 05 },
+          { points: 78, bonus: 10 },
+          { points: 67, bonus: 15 },
+          { points: 89, bonus: 20 },
+          { points: 14, bonus: 25 }]}])
+    
+    db.users.insert([{
+    	"createdAt": new Date(),
+       _id: 8,
+       name: "laidback",
+       age: 22,
+       type: 1,
+       status: "C",
+       favorites: { artist: "Erick From", food: "chips" },
+       finished: [ 3, 17 ],
+       badges: [ "purple", "pink", "white", "green", "blue" ],
+       points: [
+          { points: 70, bonus: 67 },
+          { points: 66, bonus: 10 },
+          { points: 60, bonus: 17 },
+          { points: 55, bonus: 13 },
+          { points: 50, bonus: 12 }]}])
+     
+     db.users.insert([{
+     	"createdAt": new Date(),
+       _id: 9,
+       name: "martha",
+       age: 24,
+       type: 2,
+       status: "A",
+       favorites: { artist: "Dorian", food: "pistaches" },
+       finished: [ 3 ],
+       badges: [ "white", "blue", "black", "red", "green" ],
+       points: [
+          { points: 33, bonus: 12 },
+          { points: 90, bonus: 14 },
+          { points: 55, bonus: 60 },
+          { points: 15, bonus: 82 },
+          { points: 90, bonus: 11 }]}])
+     
+     db.users.insert([{
+     "createdAt": new Date(),
+       _id: 10,
+       name: "jordan",
+       age: 29,
+       type: 1,
+       status: "D",
+       favorites: { artist: "Standerwick", food: "burguer" },
+       finished: [ 4, 10 ],
+       badges: [ "pink", "black", "blue", "gray", "cian" ],
+       points: [
+          { points: 10, bonus: 34 },
+          { points: 13, bonus: 14 },
+          { points: 67, bonus: 56 },
+          { points: 88, bonus: 10 },
+          { points: 51, bonus: 99 }]}])
+
+
+*****************CASSSSSSSANDRAAAAAA*******************************************************
+
+**CASSANDRA USERS
+CREATE TABLE users (
+				id int PRIMARY KEY,
+				name text,
+				age int,
+				type int,
+				status text,
+				favorites map<text, text>,
+				finished list<float>,
+				badges set<text>,
+				points set<frozen<map<text, text>>>);
+
+
+				
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(1,'Claudia',25,1,'D',{'artist':'BeatService','food':'pizza'},[8,10],{'pink','black','brown','white'},{{'points': '51','bonus': '92'},{'points':'12','bonus':'88'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(2,'Diego',5,2,'P',{'artist':'MarkusSchulz','food':'lasagna'},[3,3],{'red','black','gray','pink'},{{'points':'45','bonus':'00'},{'points':'67','bonus':'5'},{'points':'12','bonus':'88'},{'points':'90','bonus':'11'},{'points':'12','bonus':'2'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(3,'Cinthya',22,1,'C',{'artist':'Willem','food':'pollo'},[23,22],{'white','cian','black','red'},{{'points':'09','bonus':'99'},{'points': '13','bonus':'23'},{'points':'67','bonus':'5'},{'points':'88','bonus':'10'},{'points':'51','bonus':'90'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(4,'Mariana',30,2,'D',{'artist':'RubendeROnde','food':'mariscos'},[40,42],{'red','blue','green','yellow'},{{'points':'67','bonus':'12'},{'points': '34','bonus':'45'},{'points':'56','bonus':'67'},{'points':'78','bonus':'89'},{'points':'13','bonus':'14'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(5,'Ernesto',45,2,'F',{'artist':'ULTRA','food':'pizza'},[8,10],{'pink','black','brown','white'},{{'points':'67','bonus':'77'},{'points':'55','bonus':'12'},{'points':'8','bonus':'90'},{'points':'1','bonus':'23'},{'points':'51','bonus':'2'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(6,'Lorenzo',77,1,'A',{'artist':'Zedd','food':'pizza'},[8,10],{'purple','green','fiuscia','black'},{{'points':'11','bonus':'22'},{'points': '33','bonus':'44'},{'points':'55','bonus':'66'},{'points':'77','bonus':'88'},{'points':'99','bonus':'100'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(7,'Fabiola',99,2,'C',{'artist':'JordanSuckley','food':'pizza'},[23,12],{'red','yellow','white','pink'},{{'points':'11','bonus':'99'},{'points': '24','bonus':'14'},{'points':'45','bonus':'44'},{'points':'77','bonus':'10'},{'points':'51','bonus':'1'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(8,'Rene',34,1,'A',{'artist':'Sia','food':'pizza'},[34,12],{'blue','cian','orange','white'},{{'points':'7','bonus':'12'},{'points': '13','bonus':'14'},{'points':'67','bonus':'56'},{'points':'88','bonus':'10'},{'points':'51','bonus':'6'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(9,'Tona',78,2,'D',{'artist':'Solarstone','food':'sushi'},[45,1],{'green','black','red','blue'},{{'points':'2','bonus':'34'},{'points': '13','bonus':'14'},{'points':'67','bonus':'56'},{'points':'88','bonus':'34'},{'points':'51','bonus':'1'}}) USING TTL 604800;
+
+INSERT INTO users (id, name,age,type,status,favorites,finished,badges,points) VALUES(10,'Jorn',12,1,'A',{'artist':'W&W','food':'pescado'},[2,3],{'silver','golden','violet','gray'},{{'points':'9','bonus':'55'},{'points':'3','bonus':'7'},{'points':'34','bonus':'90'},{'points':'89','bonus':'120'},{'points':'56','bonus':'12'}}) USING TTL 604800;
+
+
+
+
+
+
+
+*CASSANDRA STUDENTS
+CREATE table students( 
+          		id int PRIMARY KEY, 
+          		name text,
+          		age int, 
+          		dir text, 
+          		colors set<text>,
+          		accounts list<float>,
+          		pets set<frozen<map<text, text>>>);
+
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (1,'paul', 44, 'Arkansas 05', {'yellow','purple','red'}, [77,90,33], {{'name':'Dyk', 'especie':'dog', 'raza':'pug', 'age': '3'}, {'name':'van', 'especie':'pato', 'raza': 'plumifero', 'age': '1'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (2,'sander', 42, 'New York 444', {'green','orange','pink'}, [00,100,30], {{'name':'kiko', 'especie':'cat', 'raza':'oranger', 'age': '3'}, {'name':'vai', 'especie':'ave', 'raza': 'rufo', 'age': '1'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (3,'Enrique', 24, 'Japon 54', {'yellow','purple','red'}, [50,60,70], {{'name':'Dado', 'especie':'dog', 'raza':'beagle', 'age': '2'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (4,'Sandra', 25, 'Naucalpan', {'pink','purple','golden'}, [11,12,13], {{'name':'pelusa', 'especie':'pez', 'raza':'luna', 'age': '1'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (5,'Renata', 14, 'Manila 123', {'red','purple','white'}, [66,22,78], {{'name':'Armin', 'especie':'dog', 'raza':'bulldog', 'age': '5'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (6,'Monica', 26, 'Michoacan 2323', {'orange','red','blue'}, [14,15,16], {{'name':'leyzer', 'especie':'dog', 'raza':'pitbull', 'age': '7'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (7,'Marcos', 24, 'Iztapalapa 1060', {'purple','black','blue'}, [100,100,100], {{'name':'Coco', 'especie':'dog', 'raza':'Aleman', 'age': '2'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (8,'Cristian', 25, 'Pegregal 23', {'black','gray','green'}, [80,22,100], {{'name':'everardo', 'especie':'cat', 'raza':'siames', 'age': '9'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (9,'Enio', 26, 'Guatemala 1550', {'blue','purple','black'}, [110,45,12], {{'name':'Porrin', 'especie':'pollo', 'raza':'pollo', 'age': '1'}}) USING TTL 604800;
+
+insert INTO students(id, name, age, dir, colors, accounts, pets) VALUES (10,'Omar', 56, 'Ensenada 1200', {'green','cian','blue'}, [100,100,1200], {{'name':'saladino', 'especie':'dog', 'raza':'criollo', 'age': '4'}}) USING TTL 604800;
+

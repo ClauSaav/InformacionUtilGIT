@@ -1,0 +1,176 @@
+db.users.insert(
+  [
+     {
+       _id: 7,
+       name: "armin",
+       age: 29,
+       type: 1,
+       status: "P",
+       favorites: { artist: "Faulkner", food: "Chips" },
+       finished: [ 34, 14 ],
+       badges: [ "red", "green", "purple", "orange", "cian" ],
+       points: [
+          { points: 95, bonus: 11 },
+          { points: 45, bonus: 02 },
+          { points: 13, bonus: 04 },
+          { points: 67, bonus: 05 },
+          { points: 90, bonus: 06 }]}]),
+db.users.insert([{
+       _id: 8,
+       name: "Adina",
+       age: 34,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Franklin", food: "mole" },
+       finished: [ 12, 26 ],
+       badges: [ "yellow", "blue", "red", "gray", "cian" ],
+       points: [
+          { points: 99, bonus: 55 },
+          { points: 88, bonus: 44 },
+          { points: 87, bonus: 33 },
+          { points: 77, bonus: 22 },
+          { points: 56, bonus: 11 }]}])
+     
+
+
+
+
+
+
+ db.users.insert([{
+       _id: 9,
+       name: "Tomas",
+       age: 72,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Anahera", food: "raise" },
+       finished: [ 6 ],
+       badges: [ "blue", "red", "green", "black", "white"],
+       points: [
+          { points: 89, bonus: 3 },
+          { points: 66, bonus: 4 },
+          { points: 99, bonus: 5 },
+          { points: 12, bonus: 6 },
+          { points: 34, bonus: 20 }]}])
+
+db.users.insert([{
+       _id: 10,
+       name: "markus",
+       age: 34,
+       type: 1,
+       status: "D",
+       favorites: { artist: "Solarstone", food: "chocolate" },
+       finished: [ 3, 18 ],
+       badges: [ "green", "cian", "yellow", "blue", "red" ],
+       points: [
+          { points: 93, bonus: 18 },
+          { points: 83, bonus: 19 },
+          { points: 73, bonus: 11 },
+          { points: 63, bonus: 12 },
+          { points: 51, bonus: 22 }]}])
+     
+     db.users.insert([{
+       _id: 11,
+       name: "Ben",
+       age: 28,
+       type: 1,
+       status: "C",
+       favorites: { artist: "MaRLo", food: "spaggetti" },
+       finished: [ 12, 3 ],
+       badges: [ "orange", "yellow", "white", "gray", "purple" ],
+       points: [
+          { points: 21, bonus: 12 },
+          { points: 88, bonus: 11 },
+          { points: 35, bonus: 03 },
+          { points: 44, bonus: 13 },
+          { points: 22, bonus: 10 }]}])
+   
+   db.users.insert([{
+       _id: 12,
+       name: "ferry",
+       age: 44,
+       type: 2,
+       status: "A",
+       favorites: { artist: "Gouryella", food: "soup" },
+       finished: [ 20, 20 ],
+       badges: [ "red", "blue", "green", "yellow", "orange"],
+       points: [
+          { points: 18, bonus: 10 },
+          { points: 81, bonus: 18 },
+          { points: 08, bonus: 15 },
+          { points: 34, bonus: 12 },
+          { points: 99, bonus: 11 }]}])
+    
+    db.users.insert([{
+       _id: 13,
+       name: "sue",
+       age: 19,
+       type: 1,
+       status: "P",
+       favorites: { artist: "Leonardo", food: "Donuts" },
+       finished: [ 16, 1 ],
+       badges: [ "black", "white", "green", "blue", "red" ],
+       points: [
+          { points: 45, bonus: 05 },
+          { points: 78, bonus: 10 },
+          { points: 67, bonus: 15 },
+          { points: 89, bonus: 20 },
+          { points: 14, bonus: 25 }]}])
+    
+    db.users.insert([{
+       _id: 14,
+       name: "laidback",
+       age: 22,
+       type: 1,
+       status: "C",
+       favorites: { artist: "Erick From", food: "chips" },
+       finished: [ 3, 17 ],
+       badges: [ "purple", "pink", "white", "green", "blue" ],
+       points: [
+          { points: 70, bonus: 67 },
+          { points: 66, bonus: 10 },
+          { points: 60, bonus: 17 },
+          { points: 55, bonus: 13 },
+          { points: 50, bonus: 12 }]}])
+     
+     db.users.insert([{
+       _id: 15,
+       name: "martha",
+       age: 24,
+       type: 2,
+       status: "A",
+       favorites: { artist: "Dorian", food: "pistaches" },
+       finished: [ 3 ],
+       badges: [ "white", "blue", "black", "red", "green" ],
+       points: [
+          { points: 33, bonus: 12 },
+          { points: 90, bonus: 14 },
+          { points: 55, bonus: 60 },
+          { points: 15, bonus: 82 },
+          { points: 90, bonus: 11 }]}])
+     
+     db.users.insert([{
+       _id: 16,
+       name: "jordan",
+       age: 29,
+       type: 1,
+       status: "D",
+       favorites: { artist: "Standerwick", food: "burguer" },
+       finished: [ 4, 10 ],
+       badges: [ "pink", "black", "blue", "gray", "cian" ],
+       points: [
+          { points: 10, bonus: 34 },
+          { points: 13, bonus: 14 },
+          { points: 67, bonus: 56 s},
+          { points: 88, bonus: 10 },
+          { points: 51, bonus: 99 }]}])
+    
+***CONSULTAS***
+*Mostrar nombre y edad de aquellos usuarios que su status sea D de manera descendente
+>db.users.aggregate([{$match:{status: "D"}},{$project: {_id:0,name:1,age:1}},{$sort:{age:-1}}])
+
+*Mostrar el nombre y status de usuarios y define cual es el bonus maximo de cada usuario    
+>db.users.aggregate([{$project: {_id:0, name:1, status:1,'points.bonus':1 }},{$unwind: "$points"},{$group:{_id:"$name",maxBonus:{$max:"$points.bonus"}}}])
+
+*
+db.users.aggregate([{$match: {age:{$gte:40}}},{$project: {_id:0, name:1, age:1,status:1,'points.points':1 }},{$unwind: "$points"},{$group:{_id:"$age",maxPuntos:{$max:"$points.points"}}}])

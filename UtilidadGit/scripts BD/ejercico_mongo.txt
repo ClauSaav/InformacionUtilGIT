@@ -1,0 +1,9 @@
+*Muestre aquellos documentos que contengan una cuenta entre los valores del 20 al 88, odenado por nombre descendente
+>>>db.students.find({accounts:{$in: [20, 88]}}).sort({nombre:-1})
+
+*Muestra los documentos que contengan el color red, ordene por edad de manera descendente y limite a 2 registros   -------y su mascota sea menor a 5 años
+>>>> db.students.find({colors: {$eq: 'red'}}).sort({age:-1}).limit(2)
+
+*Muestre los documentos de los perros que muestre  nombre, direccion, colores, en cuanto a mascotas mostrar el nombre, edad y raza de  manera descendente 
+>>>db.students.find({'pets.especie': {$eq:'dog'}},{_id:0,name:1,dir:1,colors:1,'pets:name':1,'pets.age':1,'pets.raza':1}).sort({name:-1})
+

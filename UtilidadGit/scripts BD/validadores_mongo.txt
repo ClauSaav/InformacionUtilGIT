@@ -1,0 +1,45 @@
+*** STUDENTS 
+db.runCommand({collMod:"students", 
+validator:{$and: [{"name":{$type: "string"}},
+                  {"age":{$type: "double"}},
+                  {"dir":{$type: "string"}},
+                  {"colors":{$type: "string"}},
+                  {"accounts":{$type: "double"}},
+                  {"pets.name":{$type: "string"}},
+                  {"pets.especie":{$type: "string"}},
+                  {"pets.raza":{$type: "string"}},
+                  {"pets.age": {$type: "double"}}
+		]
+},
+validationLevel: "moderate",
+validationAction: "warn"})
+
+En base a lo que investigue para una validacion moderada se hacen las inserciones pero no para actualizaciones
+con warn los mensajes van directo a log por lo tanto podemos hacer uso de la siguiente linea: 
+****CHECAR LOS LOGS CUANDO USAMOS WARN
+db.adminCommand({getLog: "global" })
+
+
+*** USERS
+La validacion por default es estricta opte por especificarla junto con una validacion de accion que envia error
+y funciona el validador para las inserciones como para las actualizaciones sobre los documentos existentes.
+db.runCommand({collMod: "users", 
+validator:{$and: [
+		{"name": {$type: "string"}},
+		{"age": {$type: "double"}},
+		{"type":{$type: "double"}},
+		{"status":{$type: "string"}},
+		{"favorites":{$type: "string"}},
+		{"finished":{$type: "double"}},
+		{"badges":{$type: "string"}},
+		{"points.points":{$type: "double"}},
+		{"points.bonus": {$type: "double"}}
+		]
+},
+validationLevel: "strict",
+validationAction: "error"})
+
+
+
+
+

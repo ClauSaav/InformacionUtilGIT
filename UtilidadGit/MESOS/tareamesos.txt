@@ -1,0 +1,81 @@
+pache Mesos es un administrador de clúster de código abierto desarrollado en la Universidad de California, Berkeley. "Provee aislamiento de recursos eficiente y compartido a través de aplicaciones distribuidas, o frameworks".1 El software habilita recursos compartidos de forma precisa, mejorando la utilización del clúster.
+
+Ha sido adoptado por varias compañías de software grandes, incluyendo Twitter, Airbnb y Apple. Al menos 50 organizaciones actualmente usan Mesos.2
+
+En julio 27, 2016 apache Mesos anunció la disponibilidad de apache Mesos v1.0. La adición más notable al software fue la “unificación de contenedores” esto permitió la capacidad de soportar Docker, rkt e instancias appc.
+
+Índice
+
+    1 Historia
+    2 Arquitectura
+    3 Competencia
+    4 Frameworks
+        4.1 Apache Aurora
+        4.2 Chronos
+        4.3 Marathon
+    5 Usuarios prominentes
+    6 Soporte comercial
+    7 Referencias
+    8 Enlaces externos
+
+Historia
+
+Mesos empezó como un proyecto de investigación en el Laboratorio UC Berkeley RAD en ese entonces por los estudiantes de doctorado Benjamin Hindman, Andy Konwinski, y Matei Zaharia, así cómo el profesor Ion Stoica. Los estudiantes empezaron a trabajar juntos en el proyecto cómo parte de un curso de Tópicos Avanzados en Sistemas de Computadores por David Culler. Fue originalmente nombrado Nexus, pero debido a un conflicto con el proyecto de otra universidad, fue rebautizado a Mesos.3
+
+La primera presentación de Mesos fue en 2009 (mientras todavía era llamado Nexus) por Andy Konwinski en HotCloud '09 en una charla que acompañaba el primer articulo científico publicado sobre el proyecto.4 Más tarde en 2011 es presentado en un estado más maduro en una charla por Matei Zaharia en el USENIX, conferencia Symposium on Networked Systems Design and Implementation sobre el articulo "Mesos: Una Plataforma para administrar recursos compartidos en el Centro de procesamiento de Datos" por Benjamin Hindman, Andy Konwinski, Matei Zaharia, Ali Ghodsi, Anthony D. Joseph, Randy Katz, Scott Shenker, Ión Stoica.5
+Arquitectura
+
+Mesos utiliza un mecanismo de dos niveles de planificación en donde se ofrecen recursos a frameworks (aplicaciones que corren arriba de Mesos). El nodo maestro Mesos decide cuántos recursos puede ofrecer a cada framework, mientras que cada framework determina los recursos que acepta y qué aplicación ejecutar en estos recursos. Este método de asignación de recursos permite un acercamiento optimo de la ubicación de datos cuándo se comparte un clúster de nodos entre frameworks diversos.
+
+Mesos usa Linux Cgroups para proporcionar aislamiento de CPU, memoria, I/O y sistema de archivos
+Competencia
+
+Mesos es a menudo comparado con Google Omega scheduler, un plataforma altamente secreta utilizada internamente para dirigir y distribuir los servicios de Google.6
+Frameworks
+
+Mesos es la base para un numerosos sistemas distribuidos. Estos sistemas distribuidos son llamados frameworks.[cita requerida]
+Apache Aurora
+
+Apache Aurora es un framework de Mesos para servicios de corrida prolongada y trabajos cron, originalmente desarrollado por Twitter a comienzos del 2010 y de código abierto a fines del 2013.7 Puede escalar a decenas de miles de servidores, y contiene muchas similitudes con Borg scheduler de Google incluyendo su ADSL rico para configurar servicios.8 9
+Chronos
+
+Chronos es un sistema distribuido cron-like, es elástico y también puede expresar dependencias entre trabajos. Puede escalar a miles de servidores físicos y es, lo más parecido a Mesos framework, completamente elástico y a prueba de fallos.10
+Marathon
+
+Marathon es un popular PaaS o sistema de orquestación de contenedores que escala a miles de servidores físicos. Esta completamente basado en REST y permite despliegues del estilo canary y topologías de despliegue. Está escrito en Scala y es altamente disponible, elástico, y distribuido.11
+Usuarios prominentes
+
+EL sitio de redes sociales Twitter empezó utilizar Mesos y apache Aurora en 2010, después de que (entonces estudiante de doctorado) Benjamin Hindman dio una presentación a un grupo de ingenieros de Twitter.6
+
+Airbnb usa [cuando? ] Mesos para correr numerosos sistemas de procesamiento de datos como apache Hadoop y Apache Spark.12
+
+El sitio web de subasta eBay usa[cuando? ] Mesos para correr integración continua en un ambiente de desarrollo. Logran este cometido utilizando un plugin de Mesos customizado que permite a los desarrolladores lanzar su propias y privadas instancias de Jenkins.13
+
+En abril 2015, fue anunciado que el servicio Siri de Apple está utilizando su propio framework Mesos llamado Jarvis.14
+
+En agosto 2015, fue anunciado que Verizon ha seleccionado Mesosphere's DCOS, el cual está basado en un Apache Mesos de código abierto Mesos, cómo su orquestador de centro de datos para su plataforma a nivel nacional.15
+
+En noviembre 2015, Yelp anunció que habían estado utilizando Mesos/Marathon por un año y un medio para servicios de producción.16
+Soporte comercial
+
+Mesosphere vende el Centro de Datos Sistema operativo, un sistema operativo distribuido, basado en apache Mesos.17 En septiembre 2015, Microsoft anunció una sociedad comercial con Mesosphere para construir un planificador de contenedores y servicios de orquestación para Microsoft Azure.18
+Referencias
+
+«Mesos». twitter.com. Consultado el 13 de enero de 2015.
+«Organizations using Mesos». mesos.apache.org. Consultado el 12 de enero de 2015.
+«HUG Meetup August 2010: Mesos: A Flexible Cluster Resource manager - Part 1». youtube.com. Consultado el 13 de enero de 2015.
+Un Substrato Común para Informática de Grupo
+Hindman, Benjamin; Konwinski, Andy; Zaharia, Matei; Ghodsi, Ali; Joseph, Anthony; Katz, Randy; Shenker, Scott; Stoica, Ion (2011). «Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center». NSDI 11: 22-22. Consultado el 12 de enero de 2015.
+«Return of the Borg: How Twitter Rebuilt Google’s Secret Weapon». wired.com. Wired. Consultado el 12 de enero de 2015.
+«All about Apache Aurora». Twitter. Consultado el 20 de mayo de 2015.
+«Large-scale cluster management at Google with Borg» (PDF). Google. Consultado el 20 de mayo de 2015.
+«Twitter's Aurora and How It Relates to Google's Borg». Consultado el 20 de mayo de 2015. «Twitter's Aurora and How It Relates to Google's Borg». Consultado el 20 de mayo de 2015. «Twitter's Aurora and How It Relates to Google's Borg». Consultado el 20 de mayo de 2015.
+«Chronos». GitHub.com. GitHub. Consultado el 30 de marzo de 2015.
+«Marathon». Mesosphere.GitHub.io. Mesosphere. 2014. Consultado el 30 de marzo de 2015.
+«Airbnb is engineering itself into a data-driven company». gigaom.com. Consultado el 12 de enero de 2015.
+«Delivering eBay’s CI Solution with Apache Mesos - Part I». EbayTechBlog.com. eBay. Consultado el 12 de enero de 2015.
+Harris, Derrick (23 de abril de 2015). «Apple Details How It Rebuilt Siri on Mesos». Mesosphere.com. Mesosphere. Consultado el 27 de abril de 2015.
+«Verizon selects Mesosphere DCOS as nationwide platform for data center service orchestration». Verizon. Consultado el 21 de agosto de 2015.
+«Introducing PaaSTA: An Open, Distributed, Platform as a Service». engineeringblog.yelp.com. Consultado el 12 de julio de 2016.
+«The Mesosphere DCOS». mesosphere.com. Consultado el 13 de enero de 2015.
+Mary Jo Foley (29 de septiembre de 2015). «New Azure Container Service to bring together Mesos, Docker and Azure cloud». ZDNet.

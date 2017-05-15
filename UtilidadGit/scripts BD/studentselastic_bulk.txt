@@ -1,0 +1,49 @@
+
+curl -H "Content-Type: application/json" -XPOST 'search-beevagrad-yzavdnk3vgybj33teqgucq7ray.us-east-1.es.amazonaws.com/clau/test1/_bulk' -d '{"index":{"_id":"1"}}
+{"name": "Markus", "age": 38, "dir": "Miami 138", "colors": ["red","blue","green"], "accounts": [10,20,30], "pets": [{"name": "Marley", "especie": "dog", "raza": "Husky", "age":3}]}
+{"index":{"_id":"2"}}
+{"name": "Armin", "age": 39, "dir": "Holland 18", "colors": ["yellow","blue","gray"], "accounts": [30,40,50], "pets": [{"name": "Armada", "especie": "dog", "raza": "Beagle", "age":4}]}
+{"index":{"_id":"3"}}
+{"name": "Ferry", "age": 28, "dir": "Minsk 456", "colors": ["white","black","blue"], "accounts": [11,12,13], "pets": [{"name": "Gouryella", "especie": "dog", "raza": "chicane", "age": 2}]}
+{"index":{"_id":"4"}}
+{"name": "John", "age": 40, "dir": "manhathan 46", "colors": ["purple","cian","green"], "accounts": [14,34,80], "pets": [{"name": "Askew", "especie": "cat", "raza": "siames", "age": 1}]}
+{"index":{"_id":"5"}}
+{"name": "Nicky", "age": 26, "dir": "Arkansas 890", "colors": ["brown","black","gray"], "accounts": [11,56,90], "pets": [{"name": "Rome", "especie": "cat", "raza": "brittish", "age": 5}]}
+{"index":{"_id":"6"}}
+{"name": "Joel", "age": 29, "dir": "River 1056", "colors": ["black","red","cian"], "accounts": [39,123,90], "pets": [{"name": "Madden", "especie": "dog", "raza": "pug", "age": 8}]}
+{"index":{"_id":"7"}}
+{"name": "Jordan", "age": 25, "dir": "Chicago 490", "colors": ["red","white","black"], "accounts": [99,88,77], "pets": [{"name": "Suckley", "especie": "dog", "raza": "pit bull", "age": 7}]}
+{"index":{"_ids":"8"}}
+{"name": "Bryan", "age": 25, "dir": "Madisson 123", "colors": ["blue","pink","cian"], "accounts": [11,56,45], "pets": [{"name": "Kearney", "especie": "cat", "raza": "brittish", "age": 1}]}
+{"index":{"_id":"9"}}
+{"name": "Sean", "age": 38, "dir": "New York 444", "colors": ["green","orange","pink"], "accounts": [10,100,30], "pets": [{"name": "Tyas", "especie": "dog", "raza": "bulldog", "age": 10}]}
+{"index":{"_id":"10"}}
+{"name": "Paul", "age": 44, "dir": "Arkansas 05", "colors": ["yellow","purple","red"], "accounts": [77,90,33], "pets": [{"name": "Dyk", "especie": "dog", "raza": "pug", "age": 3}]}
+'
+
+curl -XDELETE 'search-beevagrad-yzavdnk3vgybj33teqgucq7ray.us-east-1.es.amazonaws.com/clau/test1/'
+
+
+*STUDENTS CON TTL
+"index":{"_id":"1"}}
+{"name": "Markus", "age": 38, "dir": "Miami 138", "colors": ["red","blue","green"], "accounts": [10,20,30], "pets": [{"name": "Marley", "especie": "dog", "raza": "Husky", "age":3,"_ttl":"2m"}]}
+{"index":{"_id":"2"}}
+{"name": "Armin", "age": 39, "dir": "Holland 18", "colors": ["yellow","blue","gray"], "accounts": [30,40,50], "pets": [{"name": "Armada", "especie": "dog", "raza": "Beagle", "age":4}]}
+{"index":{"_id":"3"}}
+{"name": "Ferry", "age": 28, "dir": "Minsk 456", "colors": ["white","black","blue"], "accounts": [11,12,13], "pets": [{"name": "Gouryella", "especie": "dog", "raza": "chicane", "age": 2}]}
+{"index":{"_id":"4"}}
+{"name": "John", "age": 40, "dir": "manhathan 46", "colors": ["purple","cian","green"], "accounts": [14,34,80], "pets": [{"name": "Askew", "especie": "cat", "raza": "siames", "age": 1}]}
+{"index":{"_id":"5"}}
+{"name": "Nicky", "age": 26, "dir": "Arkansas 890", "colors": ["brown","black","gray"], "accounts": [11,56,90], "pets": [{"name": "Rome", "especie": "cat", "raza": "brittish", "age": 5}]}
+{"index":{"_id":"6"}}
+{"name": "Joel", "age": 29, "dir": "River 1056", "colors": ["black","red","cian"], "accounts": [39,123,90], "pets": [{"name": "Madden", "especie": "dog", "raza": "pug", "age": 8}]}
+{"index":{"_id":"7"}}
+{"name": "Jordan", "age": 25, "dir": "Chicago 490", "colors": ["red","white","black"], "accounts": [99,88,77], "pets": [{"name": "Suckley", "especie": "dog", "raza": "pit bull", "age": 7}]}
+{"index":{"_ids":"8"}}
+{"name": "Bryan", "age": 25, "dir": "Madisson 123", "colors": ["blue","pink","cian"], "accounts": [11,56,45], "pets": [{"name": "Kearney", "especie": "cat", "raza": "brittish", "age": 1}]}
+{"index":{"_id":"9"}}
+{"name": "Sean", "age": 38, "dir": "New York 444", "colors": ["green","orange","pink"], "accounts": [10,100,30], "pets": [{"name": "Tyas", "especie": "dog", "raza": "bulldog", "age": 10}]}
+{"index":{"_id":"10"}}
+{"name": "Paul", "age": 44, "dir": "Arkansas 05", "colors": ["yellow","purple","red"], "accounts": [77,90,33], "pets": [{"name": "Dyk", "especie": "dog", "raza": "pug", "age": 3}]}
+'
+

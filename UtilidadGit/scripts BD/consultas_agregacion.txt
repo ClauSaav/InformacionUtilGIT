@@ -1,0 +1,2 @@
+*Mostrar el nombre y status de usuarios y define cual es el bonus maximo de cada usuario    
+>db.users.aggregate([{$project: {_id:0, name:1, status:1,'points.bonus':1 }},{$unwind: "$points"},{$group:{_id:"$name",maxBonus:{$max:"$points.bonus"}}}])

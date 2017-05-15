@@ -1,0 +1,9 @@
+{
+    "id": "task1",
+    "cmd": "cat mongo_ejercicio con datos.txt",
+    "mem": 16,
+    "cpus": 0.1,
+    "instances": 2,
+    "disk": 0.0,
+    "ports": [0]
+}

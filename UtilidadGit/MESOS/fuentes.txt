@@ -1,0 +1,12 @@
+***INSTALAR MESOS 
+https://blog.couchbase.com/docker-apache-mesos-marathon/
+	*MESOS
+	http://127.0.0.1:5050/#/
+	*MARATHON
+	http://127.0.0.1:8080/ui/#/apps
+	*PUERTO/DIRECTORIO
+	http://localhost:31225/
+
+
+***INSTALAR Y CONFIGURAR LOGSTASH
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7#install-logstash
