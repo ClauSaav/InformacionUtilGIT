@@ -1,0 +1,8 @@
+{
+	"usuarios" : [
+	{"nombre" : "Marcos", "status" : "online"},
+	{"nombre" : "Claudia", "status" : "online"},
+	{"nombre" : "Karla", "status" : "false"}
+	],
+	"cuentaUsuarios" : 2
+}
